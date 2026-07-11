@@ -1,0 +1,16 @@
+{
+  "name": "gacha-code-bot",
+  "version": "1.0.0",
+  "description": "Discord bot to scrape and announce gacha game codes",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.15.3",
+    "dotenv": "^16.4.5",
+    "puppeteer": "^25.3.0",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2"
+  }
+}
