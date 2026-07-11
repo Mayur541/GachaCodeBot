@@ -28,7 +28,7 @@ const gamesConfig = [
   },
   {
     name: 'Arknights: Endfield',
-    url: 'https://www.prydwen.gg/arknights-endfield/guides/codes/',
+    url: 'https://www.pcgamesn.com/arknights-endfield/codes',
     color: '#00008b'
   }
 ];
