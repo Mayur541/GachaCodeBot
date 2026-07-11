@@ -7,6 +7,9 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   scrape:
     runs-on: ubuntu-latest
@@ -14,7 +17,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        
+        with:
+          persist-credentials: true
+          
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -35,5 +40,9 @@ jobs:
           git config --global user.name "GachaCodeBot"
           git config --global user.email "bot@gachacodes.local"
           git add codes.json
-          git commit -m "Auto-update codes.json" || echo "No changes to commit"
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git commit -m "Auto-update codes.json"
           git push
